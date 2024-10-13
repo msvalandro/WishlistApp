@@ -25,11 +25,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.msvalandro.wishlistapp.data.DummyWishlist
 import com.msvalandro.wishlistapp.data.Wish
 
 @Composable
-fun HomeView() {
+fun HomeView(navController: NavController, viewModel: WishlistViewModel) {
     val context = LocalContext.current
 
     Scaffold(
@@ -41,7 +42,9 @@ fun HomeView() {
                 modifier = Modifier.padding(all = 20.dp),
                 contentColor = Color.White,
                 containerColor = Color.Black,
-                onClick = { /*TODO Add navigation to Add screen*/ }
+                onClick = {
+                    navController.navigate(Screen.AddScreen.route)
+                }
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add item")
             }

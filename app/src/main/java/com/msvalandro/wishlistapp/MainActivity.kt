@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WishlistAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    HomeView()
+                    Navigation()
                 }
             }
         }

@@ -3,12 +3,9 @@ package com.msvalandro.wishlistapp
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBars
-import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
@@ -48,10 +45,7 @@ fun HomeView(navController: NavController, viewModel: WishlistViewModel) {
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add item")
             }
-        },
-        modifier = Modifier
-            .fillMaxSize()
-            .windowInsetsPadding(WindowInsets.statusBars)
+        }
     ) {
         LazyColumn(modifier = Modifier
             .fillMaxSize()

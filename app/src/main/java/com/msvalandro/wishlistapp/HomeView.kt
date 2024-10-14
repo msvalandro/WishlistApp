@@ -40,7 +40,7 @@ fun HomeView(navController: NavController, viewModel: WishlistViewModel) {
                 contentColor = Color.White,
                 containerColor = Color.Black,
                 onClick = {
-                    navController.navigate(Screen.AddScreen.route)
+                    navController.navigate(Screen.AddScreen.route + "/0L")
                 }
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add item")
@@ -53,7 +53,10 @@ fun HomeView(navController: NavController, viewModel: WishlistViewModel) {
             .fillMaxSize()
             .padding(it)) {
             items(wishlist.value) {
-                WishlistItem(wish = it, onClick = {})
+                WishlistItem(wish = it) {
+                    val id = it.id
+                    navController.navigate(Screen.AddScreen.route + "/$id")
+                }
             }
         }
     }

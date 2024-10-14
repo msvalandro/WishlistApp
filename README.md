@@ -1,6 +1,6 @@
 # ✨ Wishlist APP
 
-**Wishlist APP** is an Android mobile application built using Kotlin and Jetpack Compose. This is a simple application to register wishlist items using MVVM (Mode View View Model) architecture to learn its concepts.
+**Wishlist APP** is an Android mobile application built using Kotlin and Jetpack Compose. This is a simple application to register wishlist items using [Android Room database](https://developer.android.com/jetpack/androidx/releases/room) to learn its concepts.
 
 This project is part of my learning journey in the course **The Complete Android 14 & Kotlin Development Masterclass** by [Tutorials.eu (Denis Panjuta)](https://tutorials.eu/).
 
@@ -8,7 +8,8 @@ This project is part of my learning journey in the course **The Complete Android
 
 - **Kotlin**: Main programming language for Android development.
 - **Jetpack Compose**: For building modern UI with less code and more flexibility.
-- **Android Studio**: The integrated development environment (IDE) used for the project.
+- **Room Database**: For saving and managing permanent data on the device's storage, ensuring persistence even after the app is closed.
+  **Android Studio**: The integrated development environment (IDE) used for the project.
 
 ## 🚀 Getting Started
 

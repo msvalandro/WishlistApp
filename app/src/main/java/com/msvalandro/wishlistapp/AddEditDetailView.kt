@@ -87,7 +87,11 @@ fun AddEditDetailView(
             Button(onClick = {
                 if (viewModel.wishTitleState != "" && viewModel.wishDescriptionState != "") {
                     if (id != 0L) {
-
+                        viewModel.updateWish(
+                            Wish(id,
+                                title = viewModel.wishTitleState.trim(),
+                                description = viewModel.wishDescriptionState.trim())
+                        )
                     } else {
                         viewModel.addWish(
                             Wish(title = viewModel.wishTitleState.trim(),

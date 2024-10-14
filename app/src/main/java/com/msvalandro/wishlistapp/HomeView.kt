@@ -17,13 +17,13 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.msvalandro.wishlistapp.data.DummyWishlist
 import com.msvalandro.wishlistapp.data.Wish
 
 @Composable
@@ -47,10 +47,12 @@ fun HomeView(navController: NavController, viewModel: WishlistViewModel) {
             }
         }
     ) {
+        val wishlist = viewModel.getAllWishes.collectAsState(initial = listOf())
+
         LazyColumn(modifier = Modifier
             .fillMaxSize()
             .padding(it)) {
-            items(DummyWishlist.wishlist) {
+            items(wishlist.value) {
                 WishlistItem(wish = it, onClick = {})
             }
         }
